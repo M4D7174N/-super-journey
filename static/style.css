@@ -1,0 +1,12 @@
+html {
+    background-color: rgb(167, 202, 165);
+    color: rgb(4, 4, 253);
+    font-size: 15px;
+}
+.hcont {
+    display: none;
+}
+
+.hint:hover .hcont {
+    display: block;
+}

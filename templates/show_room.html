@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h1> {{ room.name }} </h1>
+
+<pre>
+{{ room.description}}
+</pre>
+
+
+
+{% if room.name in ["Death", "The End"] %}
+    <p><a href="/">Play Again?</a></p>
+
+{% else %}
+    <section class="hint">HINTS
+        <p class="hcont">You can enter {{room.hints}}</p>
+    </section>
+    <p>{{input_val}}</p>
+    {% if room.name == 'Laser Weapon Armory'  and count < 10 %}
+        <p>{{val}}</p>
+        <p>Attempt remaining : {{count}}</p>
+    {% endif %}
+    <p>
+    <form action="/game" method="POST">
+        <input type="text" name="action"> <input type="SUBMIT">
+    </form>
+    </p>
+{% endif %}
+
+{% endblock %}
